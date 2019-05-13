@@ -1,33 +1,264 @@
+*{
+  font-family: 'Raleway', sans-serif;
+}
+
 .App {
-  text-align: center;
+  background-color: 	white;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+/*#region Header*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#header{
+  color:black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 24px;
+}
+
+#h1-text{
+  margin: 0;
+  font-size: 40px;
+}
+
+#header h2 a{
+  color: black;
+  text-decoration: none;
+  transition: color, 0.2s;
+}
+
+#header h2 a:hover{
+color: lightblue;
+opacity:0.9;
+transition: color, 0.2s;
+}
+
+h2 {
+  margin: 0;
+}
+
+.search-form{
+  min-height: 10vh;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar{
+  width: 50%;
+  border: none;
+  padding: 12px;
+  border: solid 1px rgb(202, 202, 202);
+  border-right: none;
+  border-radius: 10px 0px 0px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.search-bar:focus{
+  outline: none;
+}
+
+.search-button{
+  background: #ffeaad;
+  border: none;
+  padding: 12px 20px;
+  color: black;
+  font-weight: bold;
+  transition: background, 0.8s;
+  border-radius: 0px 10px 10px 0px;
+  border: solid 1px rgb(202, 202, 202);
+  border-left: none;
+}
+
+.search-button:focus{
+  outline: none;
+}
+
+.search-button:hover{
+  color: black;
+  background: #ffdccc;
+  transition: background, 0.8s;
+}
+
+/*#endregion Header*/
+
+/*#region Recipe*/
+
+.recipes{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1200px){
+  .recipes{
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
+
+@media screen and (max-width: 700px){
+  .recipes{
+    width: 100%;
+  }
+}
+
+.icon{
+  color: rgb(82, 82, 82);
+  padding-right: 7px;
+}
+
+.navBar{
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar div{
+  width: 100%;
+  background-color: #ffdccc;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color, 0.4s;
+}
+
+.navBar div:hover{
+  color: #ffdccc;
+  transition: color, 0.4s;
+  cursor: default;
+}
+
+.tooltip .tooltipcontent{
+  visibility: hidden;
+  position:absolute;
+  z-index: 1;
+  width: auto;
+  top: 50%;
+  left: 35%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 70px;
+  color: rgba(255, 255, 255, 0.2);
+
+
+}
+
+.tooltip:hover .tooltipcontent {
+  visibility: visible;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 15%;
+  top: 35%;
+  left: 20%;
+  z-index: 1;
+  color: black;
+}
+
+.image{
+  visibility: none;
+  float: left;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+}
+
+.tooltip .imagecontent{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: auto;
+  top:40%;
+  left: 25%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.tooltip:hover .imagecontent {
+  visibility: visible;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: inline;
+  border-radius: 40%;
+}
+
+.tooltip .imagecontent .image{
+  opacity: 0;
+
+	animation-name: fadeOutOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.35s;
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+    opacity: 0.6;
+	}
+	100% {
+    opacity: 0;
+	}
+}
+
+.tooltip:hover .imagecontent .image{
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.4s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+    opacity: 0;
+	}
+	100% {
+    opacity: 1;
+	}
+}
+
+/*#endregion Recipe*/
+
+/*#region Media700px*/
+
+@media only screen and (max-width: 700px){
+  .image{
+    visibility: none;
+    float: left;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .tooltip .imagecontent{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    top:40%;
+    left: 10%;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .tooltip .tooltipcontent{
+    visibility: hidden;
+    position:absolute;
+    z-index: 1;
+    width: auto;
+    top: 44%;
+    left: 0.5%;
+    padding: 18%;
+    font-style: 40px;
+    transition: border-radius, 0.6s;
+    border-radius: 80px;
+  }
+
+  .tooltip:hover .tooltipcontent {
+    visibility: visible;
+    border-radius: 10px;
+
+  }
+  
+}
+ 
+/*#endregion Media700px*/
+

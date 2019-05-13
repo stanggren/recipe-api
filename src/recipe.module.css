@@ -1,0 +1,137 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.recipe{
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    min-width: 30%;
+    max-width: 30%;
+    min-height: 450px;
+    padding-bottom: 12px;
+    position: relative;
+    flex-wrap: wrap;
+    border: solid 1px rgb(202, 202, 202);
+}
+
+@media screen and (max-width: 1200px){
+    .recipe{
+        max-width: 100%;
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .recipe{
+        width: 90%;
+    }
+}
+
+.image{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    
+}
+
+.ingredients{
+    display: flex;
+    flex-direction: column;
+    padding-right: 4px;
+    align-items: flex-start;
+}
+
+
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.titleBox{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffeaad;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    color: black;
+}
+
+.titleBox h1{
+    margin-left: 10px;
+}
+
+.checked{
+    
+    background-color: #6fa9d8;
+    color: #6fa9d8;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    position: sticky;
+    min-width: 6px;
+    min-height: 6px;
+    margin-right: 10px;
+    transition: color, 0.5s;
+
+}
+
+.checked:hover{
+    
+    background-color: #6fa9d8;
+    color: #6fa9d8;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    position: sticky;
+    min-width: 6px;
+    min-height: 6px;
+    margin-right: 10px;
+    transition: color, 0.4s;
+    transition: opacity, 0.2s;
+    opacity: 0.5;
+
+}
+
+.notChecked{
+    color: gray;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    position: sticky;
+    min-width: 6px;
+    min-height: 6px;
+    margin-right: 10px;
+    transition: color, 0.4s;
+
+}
+
+.notChecked:hover{
+    color: #6fa9d8;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    position: sticky;
+    min-width: 6px;
+    min-height: 6px;
+    margin-right: 10px;
+    transition: color, 0.4s;
+    opacity: 0.5;
+}
+
+.ingredients li{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-items: center;
+    margin-right: auto;
+    position: relative;
+    margin-block-start: 0.5em;
+}
+
